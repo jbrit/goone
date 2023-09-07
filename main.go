@@ -45,16 +45,16 @@ func getRoot(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			fmt.Printf("error marshalling json: %s\n", err)
 		}
-		fmt.Printf("got / request\n")
+		fmt.Printf("got /api request\n")
 		io.WriteString(w, string(b))
 	}
 }
 
 func main() {
-	http.HandleFunc("/", getRoot)
+	http.HandleFunc("/api", getRoot)
 
-	fmt.Printf("listening for requests on port 3333\n")
-	err := http.ListenAndServe(":3333", nil)
+	fmt.Printf("listening for requests on port 80\n")
+	err := http.ListenAndServe(":80", nil)
 
 	if errors.Is(err, http.ErrServerClosed) {
 		fmt.Printf("server closed\n")
