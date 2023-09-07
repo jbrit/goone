@@ -37,7 +37,7 @@ func getRoot(w http.ResponseWriter, r *http.Request) {
 			Current_day:     now.Weekday().String(),
 			Utc_time:        now.UTC().Format(time.RFC3339),
 			Track:           r.URL.Query().Get("track"),
-			Github_file_url: "https://github.com/jbrit/goone/main.go",
+			Github_file_url: "https://github.com/jbrit/goone/blob/main/main.go",
 			Github_repo_url: "https://github.com/jbrit/goone",
 			Status_code:     200,
 		}
